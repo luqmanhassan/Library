@@ -11,17 +11,21 @@
 
 <body>
     <h1>Library</h1>
-    <button>Add Book</button>
+    <button id="addBook_btn">Add Book</button>
 
     <div id="addBook">
         <h2>Add A New Book</h2>
         <form>
-            <input type="text" value="Title"><br>
-            <input type="text" value="Author"><br>
-            <input type="text" value="Pages"><br>
-            <label for="read">READ?</label>
-            <input type="radio"><br>
-            <input type="submit" value="Submit">
+            <input type="text" value="Title" id="title"><br>
+            <input type="text" value="Author" id="author"><br>
+            <input type="text" value="Pages" id="pages"><br>
+            <select id="read">
+                <option value = "Read">Read</option>
+                <option value = "Not Read">Not Read</option>
+            </select>
+            <!-- <label for="read">READ?</label>
+            <input type="radio" id="read"><br> -->
+            <input type="button" value="Submit" id="submit">
         </form>
     </div>
 
