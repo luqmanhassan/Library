@@ -26,35 +26,23 @@ function addBookCard() {
 
 }
 
-let x = title_btn.value;
-let y = author_btn.value;
-let z = pages_btn.value;
-let s = read_btn.value;
 
 function addBookToLibrary() {
-    const bookObj = new Book(x, y, z, s);
+    let x = title_btn.value;
+    let y = author_btn.value;
+    let z = pages_btn.value;
+    let s = read_btn.value;
+    let bookObj = new Book(x, y, z, s);
     myLibrary.push(bookObj);
 }
 
 function displayBook() {
-    console.log(myLibrary.length);
-    /*
-        if (myLibrary.length != 1 && myLibrary.length != 0) {
-            for (let j = 0; j < myLibrary.length; j++) {
-                document.getElementById("DivElement").remove();
-            }
-            myLibrary.forEach(bookloop);
-        } else {
-            myLibrary.forEach(bookloop);
+    while (innerDiv.length != 0) {
+        for (let j of innerDiv) {
+            j.remove();
         }
-        console.log(myLibrary.length);
-    */
-    myLibrary.forEach(bookloop);
-    for (let j = 0; j < innerDiv.length; j++) {
-        innerDiv[j].remove();
     }
-
-
+    myLibrary.forEach(bookloop);
 }
 
 function bookloop(val) {
@@ -64,34 +52,48 @@ function bookloop(val) {
     let p2 = document.createElement("p");
     let p3 = document.createElement("p");
     let p4 = document.createElement("p");
-    let btn = document.createElement("button");
+    let btn1 = document.createElement("button");
+    let btn2 = document.createElement("button");
 
     mainDiv.appendChild(divE);
     divE.appendChild(p1);
     divE.appendChild(p2);
     divE.appendChild(p3);
-    divE.appendChild(p4);
-    divE.appendChild(btn);
+    divE.appendChild(btn1);
+    divE.appendChild(btn2);
 
     let p1Child = document.createTextNode("" + val.title);
     let p2Child = document.createTextNode("" + val.author);
     let p3Child = document.createTextNode("" + val.pages);
-    let p4Child = document.createTextNode("" + val.read);
+    let readChild = document.createTextNode("Read");
     let removeChild = document.createTextNode("Remove");
 
     p1.appendChild(p1Child);
     p2.appendChild(p2Child);
     p3.appendChild(p3Child);
-    p4.appendChild(p4Child);
-    btn.appendChild(removeChild);
+    btn1.appendChild(readChild);
+    btn2.appendChild(removeChild);
 
 
-    divE.id = "DivElement";
-    btn.addEventListener("click", removeBTN);
+    divE.className = "DivElement";
+    let connect = myLibrary.length - 1;
+
+    btn1.addEventListener("click", editRead);
+    btn2.addEventListener("click", removeBTN);
+
+    function editRead() {
+        if (this.innerHTML == "Read") {
+            this.innerHTML = "Not Read";
+            myLibrary[connect].read = "Not Read"
+        } else {
+            this.innerHTML = "Read";
+            myLibrary[connect].read = "Read"
+        }
+    }
 
     function removeBTN() {
         divE.remove();
-        // delete myLibrary[this];
+        delete myLibrary[connect];
     }
 
 }
