@@ -58,7 +58,7 @@ button:hover {
   color: white;
   padding: 20px;
   max-width: 150px;
-  margin: 0px 10px;
+  margin: 10px;
 }
 
 #DivElement p {
@@ -79,5 +79,15 @@ button:hover {
   color: black;
   cursor: pointer;
   background-color: white;
+}
+
+#cardSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 /*# sourceMappingURL=styles.css.map */

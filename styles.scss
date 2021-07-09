@@ -59,7 +59,7 @@ button:hover {
 #DivElement {
     @include card;
     max-width: 150px;
-    margin: 0px 10px;
+    margin: 10px;
     p {
         margin: 5px 0px;
     }
@@ -73,4 +73,9 @@ button:hover {
         cursor: pointer;
         background-color: white;
     }
+}
+
+#cardSection {
+    display: flex;
+    flex-flow: row wrap;
 }
