@@ -15,7 +15,7 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.item = 0;
+    this.item = myLibrary.length - 1;
     this.info = () => {
         return this.title + " by " + this.author + ", " + this.pages + ", " + this.read;
     }
@@ -52,26 +52,23 @@ function Book(title, author, pages, read) {
         this.item = myLibrary.length - 1;
 
 
-        btn1.addEventListener("click", this.editRead);
-        btn2.addEventListener("click", this.removeBTN);
-    }
+        btn1.addEventListener("click", editread);
+        btn2.addEventListener("click", removebtn);
 
-    this.editRead = () => {
-        let btn1 = document.getElementsByClassName("btnElement");
-
-        if (btn1[this.item].innerHTML == "Read") {
-            btn1[this.item].innerHTML = "Not Read";
-            this.read = "Not Read";
-        } else {
-            btn1[this.item].innerHTML = "Read";
-            this.read = "Read";
+        function removebtn() {
+            myLibrary.splice(this.item, 1);
+            divE.remove();
         }
-    }
 
-    this.removeBTN = () => {
-        let divE = document.getElementsByClassName("divElement");
-        myLibrary.splice(this.item, 1);
-        divE[this.item].remove();
+        function editread() {
+            if (btn1.innerHTML == "Read") {
+                btn1.innerHTML = "Not Read";
+                this.read = "Not Read";
+            } else {
+                btn1.innerHTML = "Read";
+                this.read = "Read";
+            }
+        }
 
     }
 }
