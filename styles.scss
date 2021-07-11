@@ -56,26 +56,25 @@ button:hover {
     }
 }
 
-.DivElement {
-    @include card;
-    max-width: 150px;
-    margin: 10px;
-    p {
-        margin: 5px 0px;
-    }
-    button {
-        @include btn;
-        margin: 10px auto 0px;
-        border: 2px solid white;
-    }
-    button:hover {
-        color: black;
-        cursor: pointer;
-        background-color: white;
-    }
-}
-
 #cardSection {
     display: flex;
     flex-flow: row wrap;
+    .divElement {
+        @include card;
+        max-width: 150px;
+        margin: 10px;
+        p {
+            margin: 5px 0px;
+        }
+        button {
+            @include btn;
+            margin: 10px auto 0px;
+            border: 2px solid white;
+        }
+        button:hover {
+            color: black;
+            cursor: pointer;
+            background-color: white;
+        }
+    }
 }
