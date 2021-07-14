@@ -30,7 +30,7 @@ button:hover {
   background-color: white;
 }
 
-#addBook {
+.addBook {
   width: 250px;
   border: 2px solid black;
   background-color: black;
@@ -42,12 +42,12 @@ button:hover {
   height: 200px;
 }
 
-#addBook h2 {
+.addBook .addbook__h2 {
   margin-bottom: 10px;
 }
 
-#addBook input,
-#addBook select {
+.addBook .addbook__input,
+.addBook .addbook__select {
   margin: 5px 0px;
 }
 
