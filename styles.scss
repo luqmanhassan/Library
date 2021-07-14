@@ -41,17 +41,17 @@ button:hover {
     background-color: white;
 }
 
-#addBook {
+.addBook {
     width: 250px;
     @include card;
     display: none;
     margin: 50px auto;
     height: 200px;
-    h2 {
+    .addbook__h2 {
         margin-bottom: 10px;
     }
-    input,
-    select {
+    .addbook__input,
+    .addbook__select {
         margin: 5px 0px;
     }
 }
