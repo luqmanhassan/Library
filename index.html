@@ -10,20 +10,21 @@
 </head>
 
 <body>
+
     <h1>Library</h1>
     <button id="addBook_btn">Add Book</button>
 
-    <div id="addBook">
-        <h2>Add A New Book</h2>
-        <form>
-            <input type="text" value="Title" id="title"><br>
-            <input type="text" value="Author" id="author"><br>
-            <input type="text" value="Pages" id="pages"><br>
-            <select id="read">
-                <option value = "Read">Read</option>
-                <option value = "Not Read">Not Read</option>
+    <div id="addBook" class="addbook">
+        <h2 class="addbook__h2">Add A New Book</h2>
+        <form class="addbook__form">
+            <input type="text" value="Title" id="title" class="addbook__input"><br>
+            <input type="text" value="Author" id="author" class="addbook__input"><br>
+            <input type="text" value="Pages" id="pages" class="addbook__input"><br>
+            <select id="read" class="addbook__select"> 
+                <option value = "Read" class = "addbook__option">Read</option>
+                <option value = "Not Read" class = "addbook__option">Not Read</option>
             </select>
-            <input type="button" value="Submit" id="submit" data-bitch="10">
+            <input type="button" value="Submit" id="submit" data-bitch="10" class="addbook__input">
         </form>
     </div>
 
